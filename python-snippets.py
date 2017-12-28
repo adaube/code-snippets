@@ -17,6 +17,9 @@ key_series = pd.Series(sorted(get_keys))
 df = df.reindex(np.repeat(df.index.values, df['N']), method='ffill')
 df['start'] += pd.TimedeltaIndex(df.groupby(level=0).cumcount(), unit='h')
 
+# Handy way to flatten list
+flatten = lambda l: [item for sublist in l for item in sublist]
+
 def monotonic(x):
     dx = np.diff(x)
     return np.all(dx <= 0) or np.all(dx >= 0)
