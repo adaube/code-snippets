@@ -11,7 +11,8 @@ pd.to_numeric(df, errors='coerce')
 
 # Clean strings to ints
 df.ID = pd.to_numeric(df.ID, errors='coerce').fillna(0).astype(np.int64)
-
+# make a 'year' column with ints
+df['year'] = pd.to_numeric(df.name.str[:4], errors='coerce').fillna(0).astype(np.int64)
 # Force to int, works if strings are 'clean' numbers
 df.name.astype(int)
 
