@@ -6,6 +6,12 @@ group_map = dict(
     )
 )
 
+# Clean 'dirty' strings into ints
+pd.to_numeric(df, errors='coerce')
+
+# Force to int, works if strings are 'clean' numbers
+df.name.astype(int)
+
 # pandas and csv shenanigans
 try:
     # load csv into a pandas DataFrame (header=None is optional)
