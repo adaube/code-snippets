@@ -6,8 +6,11 @@ group_map = dict(
     )
 )
 
-# Clean 'dirty' strings into ints
+# Clean 'dirty' strings into floats
 pd.to_numeric(df, errors='coerce')
+
+# Clean strings to ints
+df.ID = pd.to_numeric(df.ID, errors='coerce').fillna(0).astype(np.int64)
 
 # Force to int, works if strings are 'clean' numbers
 df.name.astype(int)
