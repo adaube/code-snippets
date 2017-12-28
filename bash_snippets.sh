@@ -1,5 +1,8 @@
 #@IgnoreInspection BashAddShebang
 
+# using the -p flag to create directory structure
+mkdir -p /a/very/long/directory/structure/which/nobody/will/ever/find
+
 # remove all symlinks
 find -type l -delete
 
