@@ -1,5 +1,8 @@
 #@IgnoreInspection BashAddShebang
 
+# traverses directory depth to find and remove empty directories
+find . -depth -type d -exec rmdir {} \;
+
 # using the -p flag to create directory structure
 mkdir -p /a/very/long/directory/structure/which/nobody/will/ever/find
 
