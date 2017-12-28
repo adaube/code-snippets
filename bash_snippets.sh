@@ -272,7 +272,23 @@ docker run -d -p 8080:8080 \
   -itd --name jenkins-acaf acaf-docker
 
 
+# Make the record dimension time so we can append the files along record dim
+ncks -O --mk_rec_dmn time pgbh06.gdas.2015011500.test.nc pgbh06.gdas.2015011500.test.nc
 
+# Selectively remove garbage dimension and variable
+ncks -C -O -x -v time1_bounds -d time1_bounds_Dim1,1 pgbh06.gdas.2015011500.test.nc pgbh06.gdas.2015011500.test.nc
+
+# Simultaneously rename the dimension and the variable
+Mon Dec 18 14:02:09 2017: 
+ncrename -d time1,time -v time1,time pgbh06.gdas.2015011500.test.nc
+
+# Here we extract a single parameter
+Mon Dec 18 13:31:47 2017: 
+ncks -v Categorical_Rain_surface_6_Hour_Average pgbh06.gdas.2015011500.nc pgbh06.gdas.2015011500.test.nc
+
+# original data extraction for 22 of 174 parameters (file already netCDF4)
+Sat Nov 11 08:41:22 2017: 
+ncks -O -a --create_ram --no_tmp_fl -v Geopotential_height_isobaric,Temperature_surface,u-component_of_wind_isobaric,v-component_of_wind_isobaric,u-component_of_wind_height_above_ground,v-component_of_wind_height_above_ground,Ice_cover_surface,Ice_thickness_surface,Maximum_temperature_height_above_ground_6_Hour_Interval,Minimum_temperature_height_above_ground_6_Hour_Interval,Precipitation_rate_surface_6_Hour_Average,Pressure_reduced_to_MSL_msl,Relative_humidity_isobaric,Relative_humidity_height_above_ground,Temperature_isobaric,Temperature_height_above_ground,Total_cloud_cover_entire_atmosphere_single_layer_6_Hour_Average,Categorical_Rain_surface_6_Hour_Average,Categorical_Rain_surface,Categorical_Freezing_Rain_surface_6_Hour_Average,Categorical_Ice_Pellets_surface_6_Hour_Average,Categorical_Snow_surface_6_Hour_Average /skynet/ACAF5_data/cfsrv2/201501/pgbh06.gdas.2015011500.nc /skynet/ACAF5_data/cfsrv2/201501/pgbh06.gdas.2015011500.nc.extracted
 # NCO examples!
 # makes the dimension "time" the record dimension.
 ncks --mk_rec_dmn time in.nc out.nc
