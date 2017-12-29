@@ -6,6 +6,9 @@ find . -depth -type d -exec rmdir {} \;
 # using the -p flag to create directory structure
 mkdir -p /a/very/long/directory/structure/which/nobody/will/ever/find
 
+# using the -p flag to remove any empty directories recursively
+rmdir -p glo/30m/*/
+
 # remove all symlinks
 find -type l -delete
 
