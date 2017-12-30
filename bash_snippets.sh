@@ -1,5 +1,9 @@
 #@IgnoreInspection BashAddShebang
 
+# use ubuntu package manager to install current nodejs
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+apt update && apt install nodejs build-essentials -y
+
 # traverses directory depth to find and remove empty directories
 find . -depth -type d -exec rmdir {} \;
 
