@@ -284,6 +284,9 @@ docker run -d -p 8080:8080 \
   -v $PWD:/acaf \
   -itd --name jenkins-acaf acaf-docker
 
+# Use NCO to overwrite, in RAM, making record dimension set to time, extraction of single variable.
+ncks -O --create_ram --mk_rec_dmn time -v u-compone
+nt_of_wind_surface 02.nc 02.nc
 
 # Make the record dimension time so we can append the files along record dim
 ncks -O --mk_rec_dmn time pgbh06.gdas.2015011500.test.nc pgbh06.gdas.2015011500.test.nc
