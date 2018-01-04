@@ -12,15 +12,15 @@ RUN yum -y install wget bzip2 ca-certificates \
 RUN easy_install -U distribute
 RUN yum groupinstall -y "Development tools"
 # Copy SQL gz from local to image, expand, replace the user name
-COPY ./cagips.pgd.gz /var/lib/pgsql/cagips.sql.gz
+COPY ./pgd.gz /var/lib/pgsql/sql.gz
 WORKDIR /var/lib/pgsql
 # replace the supplied username with actual username (result from testing on-site)
-RUN gunzip cagips.sql.gz && sed -i '/cagipsuser/ s//dsarop/g' cagips.sql
+RUN gunzip sql.gz && sed -i '/username/ s//differentuser/g' data.sql
 # start postgres, make superuser, make and populate the database
 RUN service postgresql initdb && service postgresql start && \
-    su - postgres -c "createuser -s dsarop && createdb -O dsarop -T template0 cagips_2 && \
-    cat cagips.sql | psql cagips_2"
-RUN rm cagips.sql
+    su - postgres -c "createuser -s differentuser && createdb -O differentuser -T template0 database_name && \
+    cat data.sql | psql database_name"
+RUN rm data.sql
 # install Python packages
 RUN pip install pyephem==3.7.3.4 numpy==1.9.2
 RUN pip install pandas==0.16.2 matplotlib==1.4.3 netCDF4==1.1.8
@@ -42,6 +42,6 @@ RUN pip install pygrib==2.0.2
 RUN chkconfig postgresql on
 # trust incoming postgres connections, for dev purposes so this is okay
 RUN su - postgres -c "cd data && sed -i 's/ident/trust/' pg_hba.conf"
-ENV PYTHONPATH=/drift-sar
-WORKDIR /drift-sar
+ENV PYTHONPATH=/work
+WORKDIR /work
 ENTRYPOINT "/bin/bash"
