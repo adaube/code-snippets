@@ -1,2 +1,2 @@
 # code-snippets
-Just some useful bash scripting commands to have handy on demand.
+Useful stuff, on demand.
