@@ -1,5 +1,8 @@
 #@IgnoreInspection BashAddShebang
 
+# fix npm permissions
+sudo chown -R $(whoami) ~/.npm
+
 # use ubuntu package manager to install current nodejs
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 apt update && apt install nodejs build-essentials -y
