@@ -1,3 +1,13 @@
+# finds the 29 january months and uses cat! awesome!!!
+find . -type f -name multi_reanal.glo_30m.dp*01.grb2 | xargs -I '{}' cat {} > outfile_glo_30m_dp.grb2
+
+# don't use this unless i figure out how to fix the weird stuff cdo does
+find . -type f -name multi_reanal.glo_30m.wind*01.grb2 | xargs -I '{}' cdo -f nc4 cat {} test_cdo_glo_wind_cat.nc
+
+ncra -d time,1,7192,124 test_cdo_glo_wind_cat.nc ncra_test.nc
+
+java -Xmx1g -classpath /home/adaube/process_data/netcdfAll-4.6.11.jar ucar.nc2.write.Nccopy -f netcdf4 -i outfile_glo_30m_dp.grb2 -o outfile_glo_30m_dp.nc
+
 # finds files containing string in name and uses xargs to use cdo to convert GRIB2 into netcdf4 ***(CURRENTLY DOESN'T OUTPUT INTO INTELLIGABLE LATLON COORD VALS)***
 find $PWD -name '*bounding_box*' | xargs -i -t -n1 -P8 cdo -f nc4 -R -z zip copy {} {}.nc
 
