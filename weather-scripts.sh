@@ -22,8 +22,7 @@ ncclimo -v T,Q,RH -s 1 -e 9 -i $drc_in -o $drc_out
 # garbage collect after converting GRIB to netcdf
 find $PWD -name '*.[gn][bc][x][39]' | xargs -i -t -n1 -P8 rm {}
 # Use NCO to overwrite, in RAM, making record dimension set to time, extraction of single variable.
-ncks -O --create_ram --mk_rec_dmn time -v u-compone
-nt_of_wind_surface 02.nc 02.nc
+ncks -O --create_ram --mk_rec_dmn time -v u-component_of_wind_surface 02.nc 02.nc
 
 # Make the record dimension time so we can append the files along record dim
 ncks -O --mk_rec_dmn time pgbh06.gdas.2015011500.test.nc pgbh06.gdas.2015011500.test.nc
