@@ -61,33 +61,6 @@ find . -maxdepth 1 -name 'pgbh06.gdas.201512[01][0-5]*' | xargs -I '{}' cp {} ad
 # only keep var1,var2 variables
 ncks -O -v var1,var2 filein.nc fileout.nc
 
-# Variables needed from CFSRv2 for ACAF5
-Geopotential_height_isobaric,Temperature_surface,u-component_of_wind_isobaric,v-component_of_wind_isobaric,u-component_of_wind_height_above_ground,v-component_of_wind_height_above_ground,Ice_cover_surface,Ice_thickness_surface,Maximum_temperature_height_above_ground_6_Hour_Interval,Minimum_temperature_height_above_ground_6_Hour_Interval,Precipitation_rate_surface_6_Hour_Average,Pressure_reduced_to_MSL_msl,Relative_humidity_isobaric,Relative_humidity_height_above_ground,Temperature_isobaric,Temperature_height_above_ground,Total_cloud_cover_entire_atmosphere_single_layer_6_Hour_Average,Categorical_Rain_surface_6_Hour_Average,Categorical_Rain_surface,Categorical_Freezing_Rain_surface_6_Hour_Average,Categorical_Ice_Pellets_surface_6_Hour_Average,Categorical_Snow_surface_6_Hour_Average
-
-# Experiment: extracting 22 required variables from CFSRv2 for 2016 span for ACAF5
-time find . -maxdepth 1 -name 'pgbh06.gdas.201512[01][0-5]*' | \
-xargs -I '{}' -P 8 \
-ncks -v 'Geopotential_height_isobaric,Temperature_surface, \
-u-component_of_wind_isobaric,v-component_of_wind_isobaric, \
-u-component_of_wind_height_above_ground, \
-v-component_of_wind_height_above_ground, \
-Ice_cover_surface,Ice_thickness_surface, \
-Maximum_temperature_height_above_ground_6_Hour_Interval, \
-Minimum_temperature_height_above_ground_6_Hour_Interval, \
-Precipitation_rate_surface_6_Hour_Average, \
-Pressure_reduced_to_MSL_msl,Relative_humidity_isobaric, \
-Relative_humidity_height_above_ground,Temperature_isobaric, \
-Temperature_height_above_ground, \
-Total_cloud_cover_entire_atmosphere_single_layer_6_Hour_Average, \
-Categorical_Rain_surface_6_Hour_Average,Categorical_Rain_surface, \
-Categorical_Freezing_Rain_surface_6_Hour_Average, \
-Categorical_Ice_Pellets_surface_6_Hour_Average, \
-Categorical_Snow_surface_6_Hour_Average' \
-{} {}.extracted
-# real	1m0.818s
-# user	3m50.144s
-# sys	0m6.864s
-
 # Experiment: extracting 22 required variables from CFSRv2 for 2016 span for ACAF5
 time find /skynet/ACAF5_data/cfsrv2/ -maxdepth 2 -name 'pgbh06.gdas.2016*' | \
 xargs -I '{}' -P 8 \
@@ -112,57 +85,9 @@ Categorical_Snow_surface_6_Hour_Average \
 # user    128m27.560s
 # sys     3m55.032s
 
-# Experiment: extracting 22 required variables from CFSRv2 for 1979 span for ACAF5
-# Command to find netCDF files for ACAF5 cfsrv2 (PWD as /skynet/ACAF5_data/cfsrv2/)
-time find /skynet/ACAF5_data/cfsrv2/ -maxdepth 2 -name 'pgbh06.gdas.197*' | \
-xargs -I '{}' -P 8 \
-ncks -O -a --create_ram --no_tmp_fl -v Geopotential_height_isobaric,Temperature_surface,\
-u-component_of_wind_isobaric,v-component_of_wind_isobaric,\
-u-component_of_wind_height_above_ground,\
-v-component_of_wind_height_above_ground,\
-Ice_cover_surface,Ice_thickness_surface,\
-Maximum_temperature_height_above_ground_6_Hour_Interval,\
-Minimum_temperature_height_above_ground_6_Hour_Interval,\
-Precipitation_rate_surface_6_Hour_Average,\
-Pressure_reduced_to_MSL_msl,Relative_humidity_isobaric,\
-Relative_humidity_height_above_ground,Temperature_isobaric,\
-Temperature_height_above_ground,\
-Total_cloud_cover_entire_atmosphere_single_layer_6_Hour_Average,\
-Categorical_Rain_surface_6_Hour_Average,Categorical_Rain_surface,\
-Categorical_Freezing_Rain_surface_6_Hour_Average,\
-Categorical_Ice_Pellets_surface_6_Hour_Average,\
-Categorical_Snow_surface_6_Hour_Average \
-{} {}.extracted
-
-# Command to find netCDF files for ACAF5 cfsrv2 (PWD as /skynet/ACAF5_data/cfsrv2/)
-time find /skynet/ACAF5_data/cfsrv2/ -maxdepth 2 -name 'pgbh06.gdas.20*' | \
-xargs -I '{}' -P 8 \
-ncks -O -a --create_ram --no_tmp_fl -v Geopotential_height_isobaric,Temperature_surface,\
-u-component_of_wind_isobaric,v-component_of_wind_isobaric,\
-u-component_of_wind_height_above_ground,\
-v-component_of_wind_height_above_ground,\
-Ice_cover_surface,Ice_thickness_surface,\
-Maximum_temperature_height_above_ground_6_Hour_Interval,\
-Minimum_temperature_height_above_ground_6_Hour_Interval,\
-Precipitation_rate_surface_6_Hour_Average,\
-Pressure_reduced_to_MSL_msl,Relative_humidity_isobaric,\
-Relative_humidity_height_above_ground,Temperature_isobaric,\
-Temperature_height_above_ground,\
-Total_cloud_cover_entire_atmosphere_single_layer_6_Hour_Average,\
-Categorical_Rain_surface_6_Hour_Average,Categorical_Rain_surface,\
-Categorical_Freezing_Rain_surface_6_Hour_Average,\
-Categorical_Ice_Pellets_surface_6_Hour_Average,\
-Categorical_Snow_surface_6_Hour_Average \
-{} {}.extracted
-
-# Find above and use xargs to pass to nco command ncks that extracts and overwrites
-find . -maxdepth 2 -name 'pgbh06.gdas.*'
-
 # Failed experiments with multiple xargs
 echo $(cat cfsrv2_params_required_acaf5_flat.csv) $(find . -maxdepth 1 -name 'pgbh06.gdas.201512[01][0-5]*') | xargs -l bash -c 'ncks -O -v $1 $2 $2' | xargs
-
 echo $(cat cfsrv2_params_required_acaf5_flat.csv) $(find . -maxdepth 1 -name 'pgbh06.gdas.201512[01][0-5]*') | xargs -l bash -c 'echo $1 $2 $2' | xargs
-
 echo $(cat cfsrv2_params_required_acaf5_flat.csv) $(find . -maxdepth 1 -name 'pgbh06.gdas.201512[01][0-5]*') | xargs -l bash -c 'echo $*' | xargs
 
 # add extension nc
