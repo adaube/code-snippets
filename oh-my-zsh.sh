@@ -1,5 +1,6 @@
-# install zsh
-apt install -y zsh git-core zsh-doc
+# install zsh, git, a couple plugins, and fonts required for the agnoster theme
+apt install -y zsh git-core zsh-doc zsh-syntax-highlighting fonts-powerline
+# IMPORTANT: for agnoster theme, or any powerline style theme, change system fonts for mono to the Powerline medium one
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 cd /opt
 git clone https://github.com/sindresorhus/pure.git
