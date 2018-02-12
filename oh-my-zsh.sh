@@ -2,6 +2,10 @@
 apt install -y zsh git-core zsh-doc zsh-syntax-highlighting fonts-powerline
 # IMPORTANT: for agnoster theme, or any powerline style theme, change system fonts for mono to the Powerline medium one
 sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+# set shell to oh-my-zsh
+chsh -s /bin/zsh
+
+# optional: pure
 cd /opt
 git clone https://github.com/sindresorhus/pure.git
 ln -s "$PWD/pure.zsh" /usr/local/share/zsh/site-functions/prompt_pure_setup
