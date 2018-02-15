@@ -1,5 +1,8 @@
 #@IgnoreInspection BashAddShebang
 
+# find python symlinks
+ls -l /usr/bin/python*
+
 # fix npm permissions
 sudo chown -R $(whoami) ~/.npm
 
