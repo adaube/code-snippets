@@ -3,8 +3,8 @@
 # find python symlinks
 ls -l /usr/bin/python*
 
-# fix npm permissions
-sudo chown -R $(whoami) ~/.npm
+# fix npm permissions (updated, works great!)
+sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}
 
 # use ubuntu package manager to install current nodejs
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
