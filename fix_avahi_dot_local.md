@@ -1,5 +1,10 @@
-# One way to fix DNS resolution for .local conflicts
-Issue: cannot navigate to a `.local` domain provided by a Microsoft 
+# Keep Avahi by re-ordering dns ahead of multicast dns in Linux
+## One way to fix DNS resolution for .local conflicts
+Issue: cannot navigate to a `.local` domain in a Linux client because host uses Microsoft DNS.
+
+> Can you brute force remove avahi-daemon? _Yes_
+If that is a quick and easy solution for your situation, go for it!
+But if you don't necessarily want to do that, please read on. :sunglasses:
 
 ## Discovery
 There is an inherent conflict between Microsoft _unicast_ .local domains and Linux _multicast_ .local domains
@@ -11,8 +16,6 @@ hosts: files mdns4_minimal [NOTFOUND=return] dns
 The ordering is causing .local to resolve with mDNS (Avahi)
 
 ## Solution for Linux and Microsoft .local compatibility, without gutting Avahi
-
-- *Keep Avahi, re-order dns ahead of multicast dns*
 - First, back up `/etc/nsswitch.conf`
 ```
 # recommend backing up the nsswitch.conf somehow
