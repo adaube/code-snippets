@@ -2,7 +2,7 @@
 Issue: cannot navigate to a `.local` domain provided by a Microsoft 
 
 ## Discovery
-- There is an inherent conflict between Microsoft _unicast_ .local domains and Linux _multicast_ .local domains
+There is an inherent conflict between Microsoft _unicast_ .local domains and Linux _multicast_ .local domains
 ```
 # /etc/nsswitch.conf hosts line:
 hosts: files mdns4_minimal [NOTFOUND=return] dns
