@@ -3,6 +3,7 @@
 Issue: cannot navigate to a `.local` domain in a Linux client because host uses Microsoft DNS.
 
 > Can you brute force remove avahi-daemon? _Yes_
+
 If that is a quick and easy solution for your situation, go for it!
 But if you don't necessarily want to do that, please read on. :sunglasses:
 
