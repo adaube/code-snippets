@@ -7,8 +7,9 @@ There is an inherent conflict between Microsoft _unicast_ .local domains and Lin
 # /etc/nsswitch.conf hosts line:
 hosts: files mdns4_minimal [NOTFOUND=return] dns
 #                                            ^^^
-- The ordering is causing .local to resolve with mDNS (Avahi)
 ```
+The ordering is causing .local to resolve with mDNS (Avahi)
+
 ## Solution for Linux and Microsoft .local compatibility, without gutting Avahi
 
 - *Keep Avahi, re-order dns ahead of multicast dns*
