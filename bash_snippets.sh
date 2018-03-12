@@ -2,7 +2,7 @@
 
 # find disk space (time consuming)
 sudo du -sh /
-# find disk space (quick)
+# find filesystem space (quick)
 sudo df -h
 
 # find inode utilization
