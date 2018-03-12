@@ -1,6 +1,8 @@
 #@IgnoreInspection BashAddShebang
 
-# find disk space
+# find disk space (time consuming)
+sudo du -sh /
+# find disk space (quick)
 sudo df -h
 
 # find inode utilization
