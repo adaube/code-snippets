@@ -1,5 +1,8 @@
 #@IgnoreInspection BashAddShebang
 
+# find disk space
+sudo df -h
+
 # find inode utilization
 sudo df -i /
 
