@@ -1,5 +1,14 @@
 #@IgnoreInspection BashAddShebang
 
+# find inode utilization
+sudo df -i /
+
+# free apt cache, temp files
+sudo apt autoremove
+sudo du -sh /var/cache/apt
+sudo apt autoclean
+sudo apt clean
+
 # find python symlinks
 ls -l /usr/bin/python*
 
