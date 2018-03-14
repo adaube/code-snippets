@@ -34,7 +34,7 @@ apt update && apt install nodejs build-essentials -y
 find . -depth -type d -exec rmdir {} \;
 
 # using the -p flag to create directory structure
-mkdir -p /a/very/long/directory/structure/which/nobody/will/ever/find
+mkdir -p very/long/directory/structure/
 
 # using the -p flag to remove any empty directories recursively
 rmdir -p glo/30m/*/
@@ -81,8 +81,8 @@ xrandr --output eDP-1-1 --rotate inverted
 
 # fast way to vpn linux
 apt install ike
-cp csi.vpn ~/.ike/sites/
-ikec -r csi.vpn -u your_username -p your_password -a
+cp this.vpn ~/.ike/sites/
+ikec -r this.vpn -u your_username -p your_password -a
 
 # reorder around time axis
 #!/bin/bash
@@ -101,7 +101,7 @@ for f in *.nc; do
 done
 
 # converted ~10GB of GRIB2 to netCDF4 in 17m
-time find /skynet/METOC_Store/data/product/cfsrv2/archive/1979-01/ -maxdepth 1 -name '*.grb2' | xargs -I '{}' -P 32 java -Xmx1g -classpath /home/adam/scheduled_jobs/netcdfAll-4.6.11.jar ucar.nc2.write.Nccopy -f netcdf4 -i {} -o {}.nc
+time find /example/path -maxdepth 1 -name '*.grb2' | xargs -I '{}' -P 32 java -Xmx1g -classpath /home/adam/netcdfAll-4.6.11.jar ucar.nc2.write.Nccopy -f netcdf4 -i {} -o {}.nc
 
 # install 
 
@@ -197,7 +197,8 @@ sudo apt update && sudo apt upgrade -y
 # Remove intermediate docker images (saves space)
 docker rmi $(docker images -f "dangling=true" -q)
 
-# Disable Cortana in Win10
+# Disable Cortana in Win10 - deprecated because I have a separate script for this
+(missing example, but I'll get a one-liner for powershell soon)
 
 # curl get file url
 curl -O https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -209,7 +210,7 @@ wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh
 scp foobar.txt your_username@remotehost.edu:/some/remote/directory
 
 # Windows VM password
- Passw0rd!
+Passw0rd!
 
 # find exposed IP of localhost and run in nmap to see open ports
 ip -4 route get 8.8.8.8 |
@@ -255,6 +256,7 @@ dpkg -l linux-{image,headers}-"[0-9]*" | awk '/^ii/{ print $2}' | grep -v -e `un
 # remove all but last kernel
 dpkg -l linux-{image,headers}-"[0-9]*" | awk '/^ii/{ print $2}' | grep -v -e `uname -r | cut -f1,2 -d"-"` | grep -e '[0-9]' | xargs sudo apt-get -y purge
 
+# rda examples with secret
 curl -c rda_auth_cookies -d "email=adam@clearscienceinc.com&passwd=$(cat rda_cookie_password)&action=login" https://rda.ucar.edu/cgi-bin/login
 
 wget --save-cookies rda_cookie --post-data="email=adam@clearscienceinc.com&passwd=$(cat rda_cookie_password)&action=login" https://rda.ucar.edu/cgi-bin/login
@@ -278,7 +280,7 @@ docker service create --name jenkins-master \
     -p 50009:50009 \
     -p 8080:8080 jenkins
 # create docker secret
-echo "-master http://192.168.10.26 -password br549terminal -username csi-admin"|docker secret create jenkins-v1 -
+echo "-master http://192.168.10.1 -password abc123 -username admin" | docker secret create jenkins-v1 -
 # create and add jenkins swarm agent
 docker service create \
 	--mode=global \
@@ -303,12 +305,12 @@ function dc_trace_cmd() {
 }
 
 docker run -d -p 8080:8080 \
-  -v /skynet/ACAF5_data/openlayers:/openlayers \
-  -v /skynet/ACAF5_data/common:/common \
-  -v /skynet/METOC_Store:/skynet/METOC_Store \
-  -v /skynet/ACAF5_data:/skynet/ACAF5_data \
-  -v $PWD:/acaf \
-  -itd --name jenkins-acaf acaf-docker
+  -v /example/openlayers:/openlayers \
+  -v /example/common:/common \
+  -v /example:/example \
+  -v /example/data:/example/data \
+  -v $PWD:/example \
+  -itd --name jenkins-example example-docker
 
 
 
@@ -335,9 +337,6 @@ ls -l . | egrep -c '^-'
 # ubuntu style linux install and configure unattended-upgrades
 sudo apt-get install unattended-upgrades
 sudo dpkg-reconfigure unattended-upgrades
-
-# install java 1.8 from inside a running drift docker container
-yum install java-1.8.0-openjdk-devel -y
 
 # find LDAP DIT Root Entry and the RootDN Bind (given CSI example)
 ldapsearch -H ldap://192.168.10.2 -x -LLL -s base -b "" namingContexts
@@ -371,19 +370,17 @@ find. -name *.png -type f -print | xargs tar -cvzf images.tar.gz
 cat urls.txt | xargs wget
 
 # use xargs to process the middle input instead of first input passed
-ls /etc/*.conf | xargs -i cp {} /home/likegeeks/Desktop/out
+ls /etc/*.conf | xargs -i cp {} /home/output
 
 # find and move
 find ./ -name '*article*' | xargs -I '{}' mv {} ../backup
 
 # find in this directory items with name containing string value
-find . -maxdepth 1 -name "*pr_wav_per*"
-
 find . -maxdepth 1 -name "*failures*" | sort -r | head
 
 # moved files
-adam@skynet:/volume1/Drift-SAR_test_data/dynamic/netcdf$ mkdir hidden_files
-adam@skynet:/volume1/Drift-SAR_test_data/dynamic/netcdf$ find . -maxdepth 1 -type f -mtime -12 | xargs -I '{}' mv {} hidden_files/
+mkdir hidden_files
+find . -maxdepth 1 -type f -mtime -12 | xargs -I '{}' mv {} hidden_files/
 
 # find pycharm
 jps -mv
@@ -420,13 +417,13 @@ find . -name '*.bak' -type f | while read NAME ; do mv "${NAME}" "${NAME%.bak}" 
 
 # copies files from $PWD to an absolute directory
 while read -r line; do
-cp -f $line /home/adam/METOC_Store/new_cfsr_additions > copy.log; done < passed.txt
+cp -f $line /home/adam > copy.log; done < passed.txt
 
 # finds files in $PWD and copies to new dir
 find $PWD -name '*matching_stuff_here' | xargs -i -t cp {} $PWD/testing
 
 # using deflation level 1 from NCO tools to create netcdf4 files
-find . -name '*hycom-12_00600*' | xargs -i -t -n1 -P8 ncks -4 --dfl_lvl=1 {} {}4
+find . -name '*bounding_box*' | xargs -i -t -n1 -P8 ncks -4 --dfl_lvl=1 {} {}4
 
 # same as above but using exec
 find $PWD -name '*bounding_box*' -exec cp {} testing/ \;
@@ -438,7 +435,7 @@ sudo chmod 777 $f; done
 # remove files matching pattern <10k in size
 find $PWD -type f -size -10k -name '*GR[?]dyn*' -exec rm -f {} \;
 #
-time find $PWD -name '*curr_vcmp&format=GRIB2*' | xargs -i -t -n1 -P4 sudo java -Xmx256m -classpath /home/adam/PycharmProjects/drift-sar/lib/drift_modules/downloader/netcdfAll-4.6.6.jar ucar.nc2.dataset.NetcdfDataset -in {} -out {}.nc
+time find $PWD -name '*example&format=GRIB2*' | xargs -i -t -n1 -P4 sudo java -Xmx256m -classpath /netcdfAll-4.6.6.jar ucar.nc2.dataset.NetcdfDataset -in {} -out {}.nc
 
 # removes files in $PWD
 while read -r line; do
@@ -451,8 +448,6 @@ grep "FAIL.*read" errors.log
 sudo apt install sshfs
 mkdir /home/adam/Documents/ci-admin-Documents/
 sshfs ci-admin@192.168.10.11:/home/ci-admin/Documents /home/adam/Documents/ci-admin-Documents/
-
-sshfs ci-admin@192.168.10.11:/volume1/METOC_Store /home/adam/Documents/ci-admin-Documents/
 
 # unmount ssh fileshare
 fusermount -u /home/adam/Documents/ci-admin-Documents/
@@ -469,14 +464,14 @@ ssh -p 2222 nixcraft@192.168.1.146
 # time a couple java procs to run parallel
 time java -Xmx2g -classpath netcdfAll-4.6.6.jar ucar.nc2.write.Nccopy -i pgbh06.gdas.1979010100.grb2 -o pgbh06.gdas.1979010100.nc -f netcdf4 & java -Xmx2g -classpath netcdfAll-4.6.6.jar ucar.nc2.write.Nccopy -i pgbh06.gdas.1979010106.grb2 -o pgbh06.gdas.1979010106.nc -f netcdf4 && fg
 
-time java -Xmx2g -classpath netcdfAll-4.6.6.jar ucar.nc2.write.Nccopy -i pgbh06.gdas.1979010112.grb2 -o pgbh06.gdas.1979010112.nc -f netcdf4 & java -Xmx2g -classpath netcdfAll-4.6.6.jar ucar.nc2.write.Nccopy -i pgbh06.gdas.1979010118.grb2 -o pgbh06.gdas.1979010118.nc -f netcdf4	 && fg
+time java -Xmx2g -classpath netcdfAll-4.6.6.jar ucar.nc2.write.Nccopy -i pgbh06.gdas.1979010112.grb2 -o pgbh06.gdas.1979010112.nc -f netcdf4 & java -Xmx2g -classpath netcdfAll-4.6.6.jar ucar.nc2.write.Nccopy -i pgbh06.gdas.1979010118.grb2 -o pgbh06.gdas.1979010118.nc -f netcdf4 && fg
 
 # method@2
 time java -Xmx512m -classpath netcdfAll-4.6.6.jar ucar.nc2.dataset.NetcdfDataset -in pgbh06.gdas.1979010100.grb2 -out pgbh06.gdas.1979010100.nc -f netcdf4 & java -Xmx512m -classpath netcdfAll-4.6.6.jar ucar.nc2.dataset.NetcdfDataset -in pgbh06.gdas.1979010106.grb2 -out pgbh06.gdas.1979010106.nc -f netcdf4 && fg
 
 time java -Xmx512m -classpath netcdfAll-4.6.6.jar ucar.nc2.dataset.NetcdfDataset -in pgbh06.gdas.1979010112.grb2 -out pgbh06.gdas.1979010112.nc -f netcdf4 & java -Xmx512m -classpath netcdfAll-4.6.6.jar ucar.nc2.dataset.NetcdfDataset -in pgbh06.gdas.1979010118.grb2 -out pgbh06.gdas.1979010118.nc -f netcdf4 && fg
 
-# connect cerbo
+# connect with screen
 ssh -t root@10.10.101.101 screen -R
 
 # read markdown from command line
