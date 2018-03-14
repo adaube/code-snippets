@@ -1,5 +1,11 @@
 #@IgnoreInspection BashAddShebang
 
+# save a docker image
+docker save -o ~/example.tar example:latest
+
+# split large file into parts (useful for fat32 filesystems)
+split -b 2G example.tar "example.tar.part"
+
 # find disk space (time consuming)
 sudo du -sh /
 # find filesystem space (quick)
