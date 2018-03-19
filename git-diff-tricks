@@ -1,0 +1,11 @@
+# Uses git diff to compare checked out branch against exampleBranch, prints relative filepath stdout, linecount stdout
+git diff --shortstat --name-only exampleBranch | tee >(wc -l)
+
+# " ", pipe into a new txt file in parent dir
+git diff --shortstat --name-only dev > ../filenames-diff.txt
+
+# Perform linecount on txt file
+grep -R1 "cat ../filename-diff.txt" ./ | wc -l
+
+# Perform linecount on git diff command eval
+grep -R1 "git diff --shortstat --name-only dev" ./ | wc -l
