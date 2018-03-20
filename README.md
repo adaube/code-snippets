@@ -6,12 +6,12 @@ Note: this repo is left intentionally rough around (all) the edges, I'm making i
 
 ## Some things I learned about...
 
-[Bourne-Again SHell (bash)][3]:bangbang:
-[Git][7]
-[Docker][2]
-[Domain Name Servers][4]
-[Python][5]
-[NetCDF4][6]
+* [Bourne-Again SHell (bash)][3]:bangbang:
+* [Git][7]
+* [Docker][2]
+* [Domain Name Servers][4]
+* [Python][5]
+* [NetCDF4][6]
 
 ## Make life easier:
   1. Play in a sandbox.
