@@ -1,5 +1,8 @@
 #@IgnoreInspection BashAddShebang
 
+# stdout to docker load
+cat docker-image.tar | docker load
+
 # save a docker image
 docker save -o ~/example.tar example:latest
 
