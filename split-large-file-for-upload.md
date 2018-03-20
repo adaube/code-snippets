@@ -1,6 +1,8 @@
 Original list of files:
-    - 49G Mar 19 10:04 C0010.MP4
-    - 777 Mar 19 09:36 C0010M01.XML
+```
+49G Mar 19 10:04 C0010.MP4
+777 Mar 19 09:36 C0010M01.XML
+```
 
 Needed to split the MP4 up
     1 file is large and we want to be able to track progress easily without data loss
