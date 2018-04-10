@@ -4,6 +4,11 @@ Useful stuff (mostly). :neckbeard:
 
 Note: this repo is left intentionally rough around (all) the edges, I'm making it public just for fun. Laugh if you want just don't blame me if you accidentally destroy something with any of these commands. :heart: :shipit:
 
+- This is highly generalized information
+- Tools exist that take away a lot of the pain/negatives associated with each technology
+- Knowing how and when to use specific technologies, and the best tools for the job, is something that comes with Paying Your Dues™ as a developer
+- When in doubt, make things _less_ complex so you can move forward
+
 ## Some things I learned about...
 
 * [Bourne-Again SHell (bash)][3]:bangbang:
@@ -16,24 +21,21 @@ Note: this repo is left intentionally rough around (all) the edges, I'm making i
 
 ## Make life easier:
   1. Play in a sandbox.
-  - Virtualize, break, iterate
-  - This is highly generalized information
-  - Tools exist that take away a lot of the pain/negatives associated with each technology
-  - Knowing how and when to use specific technologies, and the best tools for the job, is something that comes with Paying Your Dues™ as a developer
-  - When in doubt, make things _less_ complex so you can move forward
-  - Isolate problems, freeze environments (or just certain layers of the environment)
-  - Containers: when you need infantry
-    - managed using tools like Docker, Kubernetes
-    - lightweight, works in layers
-    - fast, start and stop services quickly
-  - Virtual Machines: when you need a tank
-    - managed using tools like VMware :money_with_wings:, VirtualBox, Vagrant
-    - slow, bulletproof (isolation)
-    - heavy, requires dedicated resources (compute, storage, RAM) which makes it more robust
+    - Virtualize, break, iterate 
+    - Isolate problems, freeze environments (or just certain layers of the environment)
   2. When you find a way to do something, stash it somewhere that can be recalled and move on.
   3. Dependency management will consume you if you let it.
   4. Get really really good on a terminal; bonus points if you use [zsh][1]!
 
+## Virtualization
+  0. Containers: when you need infantry
+    - managed using tools like Docker, Kubernetes
+    - lightweight, works in layers
+    - fast, start and stop services quickly
+  0. Virtual Machines: when you need a tank
+    - managed using tools like VMware :money_with_wings:, VirtualBox, Vagrant
+    - slow, bulletproof (isolation)
+    - heavy, requires dedicated resources (compute, storage, RAM) which makes it more robust
 
 
 [0]: References
