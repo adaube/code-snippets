@@ -16,9 +16,20 @@ Note: this repo is left intentionally rough around (all) the edges, I'm making i
 
 ## Make life easier:
   1. Play in a sandbox.
-  * Virtualize it, break it, repeat
-  * Docker: container technology is generally useful - lightweight and works in layers, can help isolate problems and freeze environments (or just certain layers of the environment)
-  * Virtual Machines using tools like VMware :money_with_wings: or VirtualBox
+  - Virtualize, break, iterate
+  - This is highly generalized information
+  - Tools exist that take away a lot of the pain/negatives associated with each technology
+  - Knowing how and when to use specific technologies, and the best tools for the job, is something that comes with Paying Your Dues™ as a developer
+  - When in doubt, make things _less_ complex so you can move forward
+  - Isolate problems, freeze environments (or just certain layers of the environment)
+  - Containers: when you need infantry
+    - managed using tools like Docker, Kubernetes
+    - lightweight, works in layers
+    - fast, start and stop services quickly
+  - Virtual Machines: when you need a tank
+    - managed using tools like VMware :money_with_wings:, VirtualBox, Vagrant
+    - slow, bulletproof (isolation)
+    - heavy, requires dedicated resources (compute, storage, RAM) which makes it more robust
   2. When you find a way to do something, stash it somewhere that can be recalled and move on.
   3. Dependency management will consume you if you let it.
   4. Get really really good on a terminal; bonus points if you use [zsh][1]!
