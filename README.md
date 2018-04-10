@@ -28,16 +28,15 @@ Note: this repo is left intentionally rough around (all) the edges, I'm making i
   4. Get really really good on a terminal; bonus points if you use [zsh][1]!
 
 ## Virtualization
-  0. Containers: when you need infantry
-    - managed using tools like Docker, Kubernetes
-    - lightweight, works in layers
-    - fast, start and stop services quickly
-  0. Virtual Machines: when you need a tank
-    - managed using tools like VMware :money_with_wings:, VirtualBox, Vagrant
-    - slow, bulletproof (isolation)
-    - heavy, requires dedicated resources (compute, storage, RAM) which makes it more robust
-
-
+1. Containers: when you need infantry
+  - managed using tools like Docker, Kubernetes
+  - lightweight, works in layers
+  - fast, start and stop services quickly
+2. Virtual Machines: when you need a tank
+  - managed using tools like VMware :money_with_wings:, VirtualBox, Vagrant
+  - slow, bulletproof (isolation)
+  - heavy, requires dedicated resources (compute, storage, RAM) which makes it more robust
+  
 [0]: References
 [1]: https://github.com/adaube/code-snippets/blob/master/oh-my-zsh.sh
 [2]: https://github.com/adaube/code-snippets/blob/master/Dockerfile
