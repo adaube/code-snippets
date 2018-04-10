@@ -18,7 +18,7 @@ Note: this repo is left intentionally rough around (all) the edges, I'm making i
   1. Play in a sandbox.
   * Virtualize it, break it, repeat
   * Docker containers (or {other-containerization-tech})
-  * Virtual Machines (VMware :money_with_wings: or VirtualBox or {other-vm-tech}
+  * Virtual Machines using tools like VMware :money_with_wings: or VirtualBox
   2. When you find a way to do something, stash it somewhere that can be recalled and move on.
   3. Dependency management will consume you if you let it.
   4. Get really really good on a terminal; bonus points if you use [zsh][1]!
