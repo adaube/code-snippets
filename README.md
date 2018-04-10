@@ -9,15 +9,16 @@ Note: this repo is left intentionally rough around (all) the edges, I'm making i
 * [Bourne-Again SHell (bash)][3]:bangbang:
 * [Git][7]
 * [Docker][2]
+* [Postgres][8]
 * [Domain Name Servers][4]
 * [Python][5]
 * [NetCDF4][6]
 
 ## Make life easier:
   1. Play in a sandbox.
-    * Virtualize it, break it, repeat
-    * Docker containers (or {other-containerization-tech})
-    * Virtual Machines (VMware :money_with_wings: or VirtualBox or {other-vm-tech}
+  * Virtualize it, break it, repeat
+  * Docker containers (or {other-containerization-tech})
+  * Virtual Machines (VMware :money_with_wings: or VirtualBox or {other-vm-tech}
   2. When you find a way to do something, stash it somewhere that can be recalled and move on.
   3. Dependency management will consume you if you let it.
   4. Get really really good on a terminal; bonus points if you use [zsh][1]!
