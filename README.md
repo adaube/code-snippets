@@ -16,8 +16,8 @@ Note: this repo is left intentionally rough around (all) the edges, I'm making i
 ## Make life easier:
   1. Play in a sandbox.
     * Virtualize it, break it, repeat
-      * Docker containers (or {other-containerization-tech})
-      * Virtual Machines (VMware :money_with_wings: or VirtualBox or {other-vm-tech}
+    * Docker containers (or {other-containerization-tech})
+    * Virtual Machines (VMware :money_with_wings: or VirtualBox or {other-vm-tech}
   2. When you find a way to do something, stash it somewhere that can be recalled and move on.
   3. Dependency management will consume you if you let it.
   4. Get really really good on a terminal; bonus points if you use [zsh][1]!
@@ -32,3 +32,4 @@ Note: this repo is left intentionally rough around (all) the edges, I'm making i
 [5]: https://github.com/adaube/code-snippets/blob/master/pandas-snippets.py
 [6]: https://github.com/adaube/code-snippets/blob/master/create-netcd4.py
 [7]: https://github.com/adaube/code-snippets/blob/master/git-diff-tricks
+[8]: https://github.com/adaube/code-snippets/blob/master/postgres-docker.md
