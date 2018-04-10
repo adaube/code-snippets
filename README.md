@@ -13,7 +13,7 @@ Note: this repo is left intentionally rough around (all) the edges, I'm making i
 
 * [Bourne-Again SHell (bash)][3]:bangbang:
 * [Git][7]
-* [Docker][2]
+* [Docker][8]
 * [Postgres][8]
 * [Domain Name Servers][4]
 * [Python][5]
