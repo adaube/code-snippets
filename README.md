@@ -20,12 +20,12 @@ Note: this repo is left intentionally rough around (all) the edges, I'm making i
 * [NetCDF4][6]
 
 ## Make life easier:
-  1. Play in a sandbox.
-    - Virtualize, break, iterate 
-    - Isolate problems, freeze environments (or just certain layers of the environment)
-  2. When you find a way to do something, stash it somewhere that can be recalled and move on.
-  3. Dependency management will consume you if you let it.
-  4. Get really really good on a terminal; bonus points if you use [zsh][1]!
+1. Play in a sandbox.
+  - Virtualize, break, iterate 
+  - Isolate problems, freeze environments (or just certain layers of the environment)
+2. When you find a way to do something, stash it somewhere that can be recalled and move on.
+3. Dependency management will consume you if you let it.
+4. Get really really good on a terminal; bonus points if you use [zsh][1]!
 
 ## Virtualization
 1. Containers: when you need infantry
