@@ -17,7 +17,7 @@ Note: this repo is left intentionally rough around (all) the edges, I'm making i
 ## Make life easier:
   1. Play in a sandbox.
   * Virtualize it, break it, repeat
-  * Docker containers (or {other-containerization-tech})
+  * Docker: container technology is generally useful - lightweight and works in layers, can help isolate problems and freeze environments (or just certain layers of the environment)
   * Virtual Machines using tools like VMware :money_with_wings: or VirtualBox
   2. When you find a way to do something, stash it somewhere that can be recalled and move on.
   3. Dependency management will consume you if you let it.
