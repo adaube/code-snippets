@@ -1,6 +1,12 @@
 #@IgnoreInspection BashAddShebang
 
-# Delete files > 30 days old, ending with .ext
+# Safe pass to xargs to delete files > 30 days old (avoids errors due to arg list length)
+find /root/Maildir/ -mindepth 1 -type f -mtime +30 -print0 | xargs -r0 rm --
+
+# Safer delete files > 30 days old
+find /path/to/directory/ -mindepth 1 -mtime +30 -delete
+
+# Delete files > 30 days old, ending with .ext, with a message if nothing returns
 find . -name '*.ext' ! -type d -mtime +30 -print -exec rm -f {} + |  \
 	grep '^' > /dev/null || echo >&2 No old EXT files to delete
 
