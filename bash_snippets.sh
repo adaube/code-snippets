@@ -1,5 +1,9 @@
 #@IgnoreInspection BashAddShebang
 
+# Delete files > 30 days old, ending with .ext
+find . -name '*.ext' ! -type d -mtime +30 -print -exec rm -f {} + |  \
+	grep '^' > /dev/null || echo >&2 No old EXT files to delete
+
 # stdout to docker load
 cat docker-image.tar | docker load
 
