@@ -1,7 +1,10 @@
 #@IgnoreInspection BashAddShebang
 
-# Safe pass to xargs to delete files > 30 days old (avoids errors due to arg list length)
-find /root/Maildir/ -mindepth 1 -type f -mtime +30 -print0 | xargs -r0 rm --
+# Safe pass to xargs to delete files > 10 days old (avoids errors due to arg list length)
+find . -mindepth 1 -type f -mtime +10 -print0 | xargs -r0 rm --
+
+# Above but print to screen
+find . -mindepth 1 -type f -mtime +10 -print0 | xargs -r0 echo -e --
 
 # Safer delete files > 30 days old
 find /path/to/directory/ -mindepth 1 -mtime +30 -delete
