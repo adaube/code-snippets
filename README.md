@@ -1,6 +1,6 @@
 # code-snippets
 
-Useful stuff (mostly). :neckbeard:
+A bunch of useful things that I want to reuse.
 
 Note: this repo is left intentionally rough around (all) the edges, I'm making it public just for fun. Laugh if you want just don't blame me if you accidentally destroy something with any of these commands. :heart: :shipit:
 
@@ -13,8 +13,8 @@ Note: this repo is left intentionally rough around (all) the edges, I'm making i
 
 * [Bourne-Again SHell (bash)][3]:bangbang:
 * [Git][7]
-* [Docker][8]
-* [Postgres][8]
+* [Docker][9]
+* [Postgres (and containerized Postgres][8]
 * [Domain Name Servers][4]
 * [Python][5]
 * [NetCDF4][6]
@@ -46,3 +46,4 @@ Note: this repo is left intentionally rough around (all) the edges, I'm making i
 [6]: https://github.com/adaube/code-snippets/blob/master/create-netcd4.py
 [7]: https://github.com/adaube/code-snippets/blob/master/git-diff-tricks
 [8]: https://github.com/adaube/code-snippets/blob/master/postgres-docker.md
+[9]: https://github.com/adaube/code-snippets/blob/master/docker.md
