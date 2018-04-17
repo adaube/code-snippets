@@ -119,24 +119,6 @@ done
 # converted ~10GB of GRIB2 to netCDF4 in 17m
 time find /example/path -maxdepth 1 -name '*.grb2' | xargs -I '{}' -P 32 java -Xmx1g -classpath /home/adam/netcdfAll-4.6.11.jar ucar.nc2.write.Nccopy -f netcdf4 -i {} -o {}.nc
 
-# install 
-
-curl -sSL https://get.docker.com/ | sudo sh
-
-# add user to docker group (requires logging back in to work)
-sudo usermod -aG docker $USER
-
-# add jenkins to docker
-sudo usermod -aG docker jenkins
-
-# check groups for jenkins to make sure docker is there
-groups jenkins
-
-# install docker compose
-sudo curl -L https://github.com/docker/compose/releases/download/1.16.1/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
-docker-compose version
-
 # how to block quote shell script
 : <<'END'
 bla bla
