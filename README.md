@@ -18,6 +18,7 @@ Note: this repo is left intentionally rough around (all) the edges, I'm making i
 * [Domain Name Servers][4]
 * [Python][5]
 * [NetCDF4][6]
+* [NAS (Synology)][10]
 
 ## Make life easier:
 1. Play in a sandbox.
@@ -47,3 +48,4 @@ Note: this repo is left intentionally rough around (all) the edges, I'm making i
 [7]: https://github.com/adaube/code-snippets/blob/master/git-diff-tricks
 [8]: https://github.com/adaube/code-snippets/blob/master/postgres-docker.md
 [9]: https://github.com/adaube/code-snippets/blob/master/docker.md
+[10]: https://github.com/adaube/code-snippets/blob/master/nas.md
