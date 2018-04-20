@@ -1,5 +1,8 @@
 #@IgnoreInspection BashAddShebang
 
+# Line count
+ll | wc -l
+
 # Output permissions in human readable and octal formats
 stat -c '%A %a %n' /path/to/file
 
