@@ -1,5 +1,14 @@
 #@IgnoreInspection BashAddShebang
 
+# Output permissions in human readable and octal formats
+stat -c '%A %a %n' /path/to/file
+
+# Find the files < 30 days old and secure copy to some-folder @ some-server, 
+# Assumptions: client has fingerprint on some-server and their .ssh/config has Host entry for some-server
+find . -mindepth 1 -type f -mtime -30 -print0 | \
+	xargs -I {} -r0 \
+	scp {} some-server://home/some-admin/some-folder
+	
 # Safe pass to xargs to delete files > 10 days old (avoids errors due to arg list length)
 find . -mindepth 1 -type f -mtime +10 -print0 | xargs -r0 rm --
 
