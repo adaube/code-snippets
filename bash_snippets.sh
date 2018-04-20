@@ -1,5 +1,8 @@
 #@IgnoreInspection BashAddShebang
 
+# 4 column tab separated values file
+perl -e 'printf "col1\tcol2\tcol3\tcol4\nA\tB\tC\tD\nE\tF\tG\tH\n"' > tsv-4-file.tsv
+
 # Line count
 ll | wc -l
 
