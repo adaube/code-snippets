@@ -1,5 +1,15 @@
 #@IgnoreInspection BashAddShebang
 
+# Installing GNU parallel
+wget https://ftpmirror.gnu.org/parallel/parallel-20180322.tar.bz2\
+    bzip2 -dc parallel-20180322.tar.bz2 | tar xvf -\
+    cd parallel-20180322\
+# graphical progress bar using GNU parallel and zenity
+parallel -j10 --bar '(echo -n {};sleep 0.1)' 2> >(zenity --progress --auto-kill --auto-close)
+
+# Experimenting with GNU parallel!
+
+
 # 4 column tab separated values file
 perl -e 'printf "col1\tcol2\tcol3\tcol4\nA\tB\tC\tD\nE\tF\tG\tH\n"' > tsv-4-file.tsv
 
