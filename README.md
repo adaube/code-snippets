@@ -9,7 +9,9 @@ Note: this repo is left intentionally rough around (all) the edges, I'm making i
 - Knowing how and when to use specific technologies, and the best tools for the job, is something that comes with Paying Your Dues™ as a developer
 - When in doubt, make things _less_ complex so you can move forward
 
-## Some things I learned about...
+## Links
+### Quick install scripts for essential dev tools
+* [Java10 (Linux Mint specific)][11]
 
 * [Bourne-Again SHell (bash)][3]:bangbang:
 * [Git][7]
@@ -49,3 +51,4 @@ Note: this repo is left intentionally rough around (all) the edges, I'm making i
 [8]: https://github.com/adaube/code-snippets/blob/master/postgres-docker.md
 [9]: https://github.com/adaube/code-snippets/blob/master/docker.md
 [10]: https://github.com/adaube/code-snippets/blob/master/nas.md
+[11]: https://github.com/adaube/code-snippets/blob/master/java10-linux-mint.sh
