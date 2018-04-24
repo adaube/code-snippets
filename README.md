@@ -13,6 +13,7 @@ Note: this repo is left intentionally rough around (all) the edges, I'm making i
 ### Quick install scripts for essential dev tools
 * [Java10 (Linux Mint specific)][11]
 
+### Knowledge Base
 * [Bourne-Again SHell (bash)][3]:bangbang:
 * [Git][7]
 * [Docker][9]
