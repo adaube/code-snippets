@@ -15,7 +15,7 @@ Test things in a sandbox. No guarantees in life except things will break, just l
 * [Bash][3]
 * [Git][7]
 * [Docker][9]
-* [Postgres (and containerized Postgres][8]
+* [PostgreSQL (and containerized Postgres)][8]
 * [Domain Name Servers][4]
 * [Python][5]
 * [NetCDF4][6]
