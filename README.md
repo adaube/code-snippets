@@ -14,7 +14,7 @@ Note: this repo is left intentionally rough around (all) the edges, I'm making i
 * [Java10 (Linux Mint specific)][11]
 
 ### Knowledge Base
-* [Bourne-Again SHell (bash)][3]:bangbang:
+* [Bash][3]
 * [Git][7]
 * [Docker][9]
 * [Postgres (and containerized Postgres][8]
