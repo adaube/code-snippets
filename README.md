@@ -2,7 +2,9 @@
 
 A bunch of useful things that I want to reuse.
 
-Note: this repo is left intentionally rough around (all) the edges, I'm making it public just for fun. Laugh if you want just don't blame me if you accidentally destroy something with any of these commands. :heart: :shipit:
+Note: this repo is left intentionally rough around (all) the edges.
+
+Test things in a sandbox. No guarantees in life except things will break, just learn from it!
 
 
 ## Links
