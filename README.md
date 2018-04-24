@@ -4,10 +4,6 @@ A bunch of useful things that I want to reuse.
 
 Note: this repo is left intentionally rough around (all) the edges, I'm making it public just for fun. Laugh if you want just don't blame me if you accidentally destroy something with any of these commands. :heart: :shipit:
 
-- This is highly generalized information
-- Tools exist that take away a lot of the pain/negatives associated with each technology
-- Knowing how and when to use specific technologies, and the best tools for the job, is something that comes with Paying Your Dues™ as a developer
-- When in doubt, make things _less_ complex so you can move forward
 
 ## Links
 ### Quick install scripts for essential dev tools
@@ -24,6 +20,10 @@ Note: this repo is left intentionally rough around (all) the edges, I'm making i
 * [NAS (Synology)][10]
 
 ## Make life easier:
+- This is highly generalized information
+- Tools exist that take away a lot of the pain/negatives associated with each technology
+- Knowing how and when to use specific technologies, and the best tools for the job, is something that comes with Paying Your Dues™ as a developer
+- When in doubt, make things _less_ complex so you can move forward
 1. Play in a sandbox.
   - Virtualize, break, iterate 
   - Isolate problems, freeze environments (or just certain layers of the environment)
