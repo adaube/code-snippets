@@ -1,5 +1,8 @@
 #@IgnoreInspection BashAddShebang
 
+# Monitor Apache PIDs with CPU utilization and memory use in KB
+watch -n5 "ps aux -y | grep apache | awk '{print \$2,\$3,\$6}'"
+
 # Installing GNU parallel
 wget https://ftpmirror.gnu.org/parallel/parallel-20180322.tar.bz2\
     bzip2 -dc parallel-20180322.tar.bz2 | tar xvf -\
