@@ -1,3 +1,10 @@
+"""
+This is just to demonstrate some techniques; this file isn't designed to be imported as a module or run as script!
+With that said, let's import pandas and begin...
+"""
+import pandas as pd
+
+
 # HDFStore
 store = pd.HDFStore('data_name.h5')
 group_map = dict(
