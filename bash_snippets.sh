@@ -19,6 +19,11 @@ ll | wc -l
 # Output permissions in human readable and octal formats
 stat -c '%A %a %n' /path/to/file
 
+# Example syncs files matched with find using the -o (POSIX compliant) operator
+rsync -vihu --dry-run --info=progress2 --stats \
+	$(find /local/dir -name '*csv' -o -name '*regex_stuff_here*' ) \
+	user@ip:/directory/location
+
 # Find the files < 30 days old and secure copy to some-folder @ some-server, 
 # Assumptions: client has fingerprint on some-server and their .ssh/config has Host entry for some-server
 find . -mindepth 1 -type f -mtime -30 -print0 | \
