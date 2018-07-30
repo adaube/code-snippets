@@ -13,6 +13,7 @@ Test things in a sandbox. No guarantees in life except things will break, just l
 
 ### Knowledge Base
 * [Bash][3]
+* [Networking][12]
 * [Git][7]
 * [Docker][9]
 * [PostgreSQL (and containerized Postgres)][8]
@@ -55,3 +56,4 @@ Test things in a sandbox. No guarantees in life except things will break, just l
 [9]: https://github.com/adaube/code-snippets/blob/master/docker.md
 [10]: https://github.com/adaube/code-snippets/blob/master/nas.md
 [11]: https://github.com/adaube/code-snippets/blob/master/java10-linux-mint.sh
+[12]: https://github.com/adaube/code-snippets/blob/master/networking.md
