@@ -4,9 +4,9 @@
 watch -n5 "ps aux -y | grep apache | awk '{print \$2,\$3,\$6}'"
 
 # Installing GNU parallel
-wget https://ftpmirror.gnu.org/parallel/parallel-20180322.tar.bz2\
-    bzip2 -dc parallel-20180322.tar.bz2 | tar xvf -\
-    cd parallel-20180322\
+wget https://ftpmirror.gnu.org/parallel/parallel-latest.tar.bz2 \
+	&& bzip2 -dc parallel-latest.tar.bz2 | tar xvf -
+
 # graphical progress bar using GNU parallel and zenity
 parallel -j10 --bar '(echo -n {};sleep 0.1)' 2> >(zenity --progress --auto-kill --auto-close)
 
