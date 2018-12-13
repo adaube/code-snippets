@@ -1,5 +1,10 @@
 #@IgnoreInspection BashAddShebang
 
+# Change ownership of all directories from the current path
+find . -type d -exec chmod 775 {} \;
+# ...files...
+find . -type f -exec chmod 664 {} \;
+
 # Monitor Apache PIDs with CPU utilization and memory use in KB
 watch -n5 "ps aux -y | grep apache | awk '{print \$2,\$3,\$6}'"
 
